@@ -7,7 +7,18 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  let s = "";
+  let rs = "";
+
+  for (let i = 0; i < str.length; i++) {
+    const ascii = str[i].charCodeAt(0);
+    if ((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122)) {
+      s += str[i];
+      rs = str[i] + rs;
+    }
+  }
+
+  return s.toUpperCase() === rs.toUpperCase();
 }
 
 module.exports = isPalindrome;
